@@ -2,8 +2,11 @@
   <%= @post.title %>
 </h1>
 
-<div style="display:flex; justify-content:center">
+<div style="display:flex; flex-direction:column; justify-content:center; align-items:center">
   <div style="width:80%">
     <%= @post.body %>
   </div>
+  <% if user_signed_in? %>
+    <p>Author: <%=@user.user_name %></p>
+  <% end %>
 </div>
