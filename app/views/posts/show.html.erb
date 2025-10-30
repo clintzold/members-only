@@ -1,2 +1,9 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1 style="text-align:center">
+  <%= @post.title %>
+</h1>
+
+<div style="display:flex; justify-content:center">
+  <div style="width:80%">
+    <%= @post.body %>
+  </div>
+</div>
