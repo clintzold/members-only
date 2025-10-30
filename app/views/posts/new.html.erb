@@ -1,0 +1,20 @@
+<h1 style="text-align:center">Create a new post</h1>
+<div style="display:flex; flex-direction:column; justify-content:center; align-items:center">
+  <%= form_with model: @post do |form| %>
+    <% if @post.errors.any? %>
+      <div style="color:red">
+        <%= @post.errors.first.full_message %>
+      </div>
+    <% end %>
+    <div>
+      <%= form.label :title %> <br>
+      <%= form.text_field :title, placeholder: "Enter a title here..." %>
+    </div>
+    <div>
+      <%= form.label :body %> <br>
+      <%= form.text_field :body, placeholder: "Write your post here..." %>
+    </div>
+    <%= form.submit %>
+    <%= link_to "Cancel", posts_path %>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<h1 style="text-align:center">Anonymous Post Club</h1>
+<% @posts.each do |post| %>
+  <div style="display:flex; flex-direction:column; justify-content:center; border:2px black; border-radius:5px">
+    <%= link_to post.title, "#{posts_path}/#{post.id}" %>
+  </div>
+<% end %>
+<br><br><br>
+<div style="text-align:center">
+  <%= link_to "Create a new post.", posts_new_path %>
+</div>
