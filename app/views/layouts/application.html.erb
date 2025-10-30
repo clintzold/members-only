@@ -26,6 +26,8 @@
     <%= yield %>
     <% if user_signed_in? %>
       <%= render "shared/logout" %>
+    <% else %>
+      <%= render "shared/sign_in" %>
     <% end %>
   </body>
 </html>
