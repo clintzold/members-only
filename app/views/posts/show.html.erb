@@ -4,7 +4,7 @@
 
 <div style="display:flex; flex-direction:column; justify-content:center; align-items:center">
   <div style="width:80%">
-    <%= @post.body %>
+    <%= simple_format(@post.body) %>
   </div>
   <% if user_signed_in? %>
     <p>Author: <%=@user.user_name %></p>
