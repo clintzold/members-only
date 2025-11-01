@@ -7,6 +7,6 @@
     <%= simple_format(@post.body) %>
   </div>
   <% if user_signed_in? %>
-    <p>Author: <%=@user.user_name %></p>
+    <p>Author: <%=@post.user.user_name %></p>
   <% end %>
 </div>

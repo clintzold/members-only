@@ -14,7 +14,6 @@
       <%= form.label :body %> <br>
       <%= form.text_area :body, placeholder: "Write your post here..." %>
     </div>
-    <%= form.hidden_field :user_id, value: @user.id %>
     <%= form.submit %>
     <%= link_to "Cancel", posts_path %>
   <% end %>

@@ -6,18 +6,16 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @user = User.find(@post.user_id)
   end
 
   def new
-    @user = current_user
-    @post = Post.new
+    @post = current_user.posts.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to "/posts/#{@post.id}"
+      redirect_to @post
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,6 +24,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.expect(post: [ :title, :body, :user_id ])
+    params.expect(post: [ :title, :body ])
   end
 end
